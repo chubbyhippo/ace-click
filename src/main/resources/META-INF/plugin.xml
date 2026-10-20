@@ -1,0 +1,18 @@
+<idea-plugin>
+    <id>io.github.chubbyhippo.ace-click</id>
+    <name>Ace Click</name>
+    <vendor>Chubby Hippo</vendor>
+    <description><![CDATA[
+        Click visible IntelliJ controls using selectable labels.
+    ]]></description>
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <extensions defaultExtensionNs="com.intellij">
+        <applicationService serviceImplementation="io.github.chubbyhippo.aceclick.AceClickLifecycle"/>
+        <rawEditorTypedHandler implementationClass="io.github.chubbyhippo.aceclick.AceClickTypedHandler"/>
+    </extensions>
+    <actions>
+        <action id="AceClick.Click" class="io.github.chubbyhippo.aceclick.AceClickAction"
+                text="Ace Click" description="Click a visible control by label"/>
+    </actions>
+</idea-plugin>
